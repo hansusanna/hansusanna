@@ -22,12 +22,12 @@
 
 <h2>:art: UX/UI</h2>
 <ul>
-     <li>Figma: <a href="https://www.figma.com/design/rWGRBWcqvkuVFnjPYwnc7K/Project_sora?node-id=32-108&t=HdIbwCj9lmd1HLKj-1" target="_blank">
-            View Figma Design
-        </a></li>
+     <li>Figma: View Figma Design <a href="https://m.site.naver.com/1NTVy" target="_blank">
+            <img width="50" height="50" src="https://github.com/user-attachments/assets/039c8845-1bcb-4264-8602-2bfb7a0ddecf" alt="FigmaQR"/>
+        </a>
     </li> 
-    <li> Git Address: <a href="https://github.com/minnngyu97/soraclinic-global.git" target="_blank">
-            View Figma Design
+    <li> Git Address: <a href="https://m.site.naver.com/1NTW6" target="_blank">
+        <img width="50" height="50" alt="GitAddress" src="https://github.com/user-attachments/assets/0e715d49-88c3-4f31-8675-76b1545a25ab" /> 
         </a>
     </li>
 </ul>
