@@ -206,6 +206,93 @@
   border: 1px solid hsla(174, 95%, 45%, 0.2);
 }
 
+/* 슬라이드 안에 텍스트 애니메이션 */
+.hero-title{
+  opacity: 0;
+  transition: 0.5s;
+  transition-delay: 800ms;
+  transform: translateY(-30%);
+}
+
+.swiper-slide-active .hero-title{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-desc{
+  opacity: 0;
+  transition: 0.5s;
+  transition-delay: 1300ms;
+  transform: translateY(-10%);
+}
+
+.swiper-slide-active .hero-desc{
+ opacity: 1;
+ transform: translateY(0);
+}
+
+.hero-badge{
+  opacity: 0;
+  transition: 0.5s;
+  transition-delay: 1300ms;
+  transform: translateY(10%);
+}
+
+.swiper-slide-active .hero-badge{
+ opacity: 1;
+ transform: translateY(0);
+}
+
+.hero-btn-wrap {
+  opacity: 0;
+  transition: 0.5s;
+  transition-delay: 1500ms;
+  transform: translateY(10%);
+}
+
+.swiper-slide-active .hero-btn-wrap {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-image-box {
+  opacity: 0;
+  transition: 0.5s;
+  transition-delay: 800ms;
+  transform: translateX(10%);
+}
+
+.swiper-slide-active .hero-image-box {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.hero-product-badge {
+  opacity: 0;
+  transition: 0.5s;
+  transition-delay: 1300ms;
+  transform: translateY(-10%);
+}
+
+.swiper-slide-active .hero-product-badge {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.big_title {
+  color: #4C5354;;
+  font-size: var(--event-title);
+  line-height: 120%;
+  letter-spacing: 0.64px;
+}
+
+.basic_title {
+  color: var(--color-font-subdesc);
+  font-size: var(--event-desc);
+  line-height: 38px;
+  letter-spacing: 0.4px;
+}
+
 .card-title {
   font-size: var(--sub-h2);
   font-weight: var(--fw-500);
@@ -293,9 +380,8 @@
 
 .services-con {
     position: relative;
-    z-index: 1; /* 내부 콘텐츠보다 아래에 깔릴 수 있도록 */
-  }
-  
+    z-index: 1;
+}  
 .services-con:before {
     content: "";
     position: absolute;
@@ -402,18 +488,15 @@
   right: 0;
   transform: rotate(180deg);
 }
-
 .about_txt_tit {
   color:var(--color-muted);
   font-weight: var(--fw-500);
   font-size: var(--event-sub-tit);
   line-height: 2.3rem;
 }
-
 .about_txt_desc {
   color:var(--color-desc);
 }
-
 .about_txt_doctor {
   color:var(--color-muted);
   font-weight: var(--fw-500);
@@ -421,6 +504,10 @@
 .doctors-title {
   font-size: var(--sub-h4);
   font-weight: var(--fw-600);
+}
+.doctors-title {
+  font-size: var(--subtitle-h4);
+  font-weight: var(--font-weight-semibold);
 }
 
 /* Doctor Box 전체 레이아웃 */
@@ -499,7 +586,38 @@
   color: var(--color-desc);
 }
 
-.quickmenu {
-  right: 0;
-  bottom: 0;
+/* quick */
+.quick-group .quick-link {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--color-sub-bg);
+}
+
+.quick-group li img {
+  width: 32px;
+  height: 32px;
+}
+
+.quick-group .line-link {
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.gototop {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  display: block;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 50px;
+  transform: translateY(30px);
+  opacity: 0;
+  transition: 0.5s;
+  z-index: 9999;
+}
+.gototop.active {
+  opacity: 1;
+  transform: translateY(0);
 }
