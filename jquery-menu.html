@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script> 
+        $(document).ready(function(){
+            //DB분리형은 데이터의 자리수가 교집합 정보이므로 for in으로 처리
+            // const navi = ["네이버", "구글", "다음"];
+            // const navilink = ["http://www.naver.com","http://www.goole.com","http://www.daum.net"]
+          const naviData = [
+            { name: "네이버", url: "http://www.naver.com" },
+            { name: "구글", url: "http://www.google.com" },
+            { name: "다음", url: "http://www.daum.net" }
+        ];
+
+            // 2중 배열 데이터 병합
+             let gnbli = ``;
+
+              for ( valuobj of naviData ){
+            // ` 빽틱의 경우 줄 바꿈 가능 
+                gnbli += `<li>
+                    <a href="${valuobj.url}">
+                        ${valuobj.name}
+                    </a>
+                    </li>`;
+            }
+
+             $("#gnb").html(gnbli);
+
+            // const submenuItems = {
+            //     "네이버": ["뉴스", "메일", "카페"],
+            //     "구글": ["검색", "지도", "유튜브"],
+            //     "다음": ["메일", "뉴스", "티스토리"]
+            // };
+
+           
+            // let subli = ``; 
+
+            // for ( menu of navi){
+            //     // gnbli += `<li>${menu}</li>` ; 
+            //     gnbli += `<li>${menu}<ul class="submenu">${subli}</ul></li>`;
+
+            // }
+            //  for ( menu in navi){
+            //     // ` 빽틱의 경우 줄 바꿈 가능 
+            //     gnbli += `<li>
+            //         <a href="${navilink[menu]}">
+            //             ${navi[menu]}
+            //             </a>
+            //             </li>`;
+            // }
+
+
+
+            // for ( sub of submenuItems[menu]) {
+            //     subli += `<li>${sub}</li>`;
+            // }
+
+          
+
+            // // 마우스 오버 시 서브메뉴 표시 및 배경색 변경
+            // $('#gnb > li').hover(
+            //     function () {
+            //     $(this).find('.submenu').stop().slideDown(200);
+            //     },
+            //     function () {
+            //     $(this).find('.submenu').stop().slideUp(200);
+            //     }
+            // );
+
+            // // 클릭 이벤트 (메인 메뉴 클릭 시)
+            // $('#gnb > li').on('click', function () {
+            //     alert($(this).contents().get(0).nodeValue.trim() + ' 메뉴 클릭됨!');
+            // });
+
+            // // 서브메뉴 클릭 이벤트
+            // $('.submenu li').on('click', function (e) {
+            //     e.stopPropagation(); // 부모 메뉴 클릭 방지
+            //     alert($(this).text() + ' 서브메뉴 클릭됨!');
+            // });
+        })
+
+    </script>
+    <style>
+    #gnb {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        gap: 20px;
+    }
+    #gnb li {
+        padding: 10px;
+        background-color: #f0f0f0;
+        cursor: pointer;
+    }
+    #gnb ul li:hover {
+        background-color: #fd6969;
+    }
+    .submenu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      width: 120px;
+    }
+
+    .submenu li {
+      padding: 8px 12px;
+      background-color: #eee;
+    }
+
+    .submenu li:hover {
+      background-color: #ddd;
+    }
+
+  </style>
+
+</head>
+<body>
+
+       <ul id="gnb">
+
+       </ul>
+       
+</body>
+</html>

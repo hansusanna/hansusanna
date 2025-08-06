@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    // 문서의 HTML이 모두 로드된 뒤에 실행되는 이벤트
+    document.addEventListener("DOMContentLoaded", function() {
+
+        // 동적으로 HTML 내용을 문서 바디에 삽입
+        document.body.innerHTML = "<p><span>동적데이터</span>라고 합니다.</p><ul><li>리스트 아이템 1</li><li>리스트 아이템 2</li></ul>";
+        document.querySelector("p").style.cssText = "color: red; font-size: 3rem; background-color: yellow;";  // <p> 요소에 여러 스타일을 한 번에 적용
+
+       
+        const mylist = document.querySelector("ul");  // 첫 번째 <ul> 요소를 선택
+        const mySpan = document.querySelector("span"); // span태그선택
+
+        mylist.style.color = "blue"; // <ul> 텍스트 색상을 파란색으로 설정
+        mylist.style.fontSize = "2rem";  // <ul> 폰트 크기를 2rem으로 설정
+        mylist.style.listStyle = "none";  // 기본 리스트 스타일(점)을 제거
+
+        mylist.addEventListener("mouseenter", function(){
+            mylist.style.color = "red";
+            mylist.style.listStyle = "disc";
+        });
+        mylist.addEventListener("mouseleave", function(){
+            mylist.style.color = "blue";
+            mylist.style.listStyle = "none";
+        });
+
+        mySpan.style.color = "white";   // <span> 요소의 텍스트 색상을 흰색으로 설정
+        mySpan.style.backgroundColor = "black"; // <span> 요소의 배경색을 검정으로 설정
+        mySpan.style.cursor = "pointer"; //
+
+        mySpan.addEventListener("click", function(){
+            alert("드디어 해방");
+        });
+         // 클릭한 이후에 마우스를 올렸을 때 색상 변화
+        mySpan.addEventListener("mouseenter", function () {
+            mySpan.style.backgroundColor = "darkgreen";
+            mySpan.style.color = "lightyellow";
+        });
+        // 원래 색상으로 복구
+        mySpan.addEventListener("mouseleave", function () {
+            mySpan.style.backgroundColor = "black";
+            mySpan.style.color = "white";
+        });
+
+
+    })
+</script>
+</head>
+<body>
+    
+</body>
+</html>
