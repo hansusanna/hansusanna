@@ -9,30 +9,42 @@
         // jQuery를 이용한 동적 데이터 추가        
         $(document).ready(function(){
         
-            // $("#gnb .gnbli3 a").html("네이버")
-            // .attr("href", "http://www.naver.com")
-            // .attr("class", "text-dark naver")
-            // .attr("target", "_blank");
+            $("#gnb .gnbli3 a").html("네이버")
+            .attr("href", "http://www.naver.com")
+            .attr("class", "text-dark naver")
+            .attr("target", "_blank");
 
-            const naverDB = {
+            const naviDB = [
+                {
+                title: "네이버",
                 href : "http://www.naver.com",
                 class: "text-dark naver",
                 target: "_blank"
-            } 
-            const daumDB = {
+                },
+                {
+                title: "다음",
                 href : "http://www.daum.net",
                 class: "text-dark daum",
                 target: "_blank"
-            } 
-            $("#gnb .gnbli3 a")
-            .html("네이버")
-            .attr(naverDB)
-
-            $("#gnb .gnbli2 a")
-            .html("다음")
-            .attr(daumDB)
-
-
+                },
+                {
+                title: "구글",
+                href : "http://www.google.com",
+                class: "text-dark Google",
+                target: "_blank"
+                },
+            //     {
+            //     title: "NNN",
+            //     href : "http://www.naver.com",
+            //     class: "text-dark NNN",
+            //     target: "_blank"
+            //     }
+            ]
+    
+            $("#gnb li a").each(function(){
+                $(this).html(naviDB[$(this).parent().index()].title)
+            })
+            
         })
     </script>
 </head>
