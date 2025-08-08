@@ -8,6 +8,7 @@
 <script>   
         $(document).ready(function(){
         //DB가 준비가 된 케이스 > 동적 객체가 정답
+        //스피드빨라도, 단 SEO 검색불가(한시적쓰는 이벤트 페이지 제작할때 주로 사용)
             $("#gnb .gnbli3 a").html("네이버")
             .attr("href", "http://www.naver.com")
             .attr("class", "text-dark naver")
@@ -39,22 +40,31 @@
             //     target: "_blank"
             //     }
             ]
+            let navitag = "";
+
+            for (x of naviDB) {
+                navitag += `<li class="gnbli1">
+                    <a href="${x.href}" target="${x.target}">${x.title}</a>
+                    </li>`;  
+            }
+
+            $("#gnb").html(navitag);
     
-            $("#gnb li a").each(function(){
+            // $("#gnb li a").each(function(){
                
-                $(this).html($(this).parent().data("nm"))
-                $(this).attr("href", $(this).data("href"))
-            })
+            //     $(this).html($(this).parent().data("nm"))
+            //     $(this).attr("href", $(this).data("href"))
+            // })
             
         })
     </script>
 </head>
 <body>
 <ul id="gnb">
-    <li class="gnbli1" data-nm="네이버" data-href="http://www.naver.com"><a href="">1</a></li>
+    <!-- <li class="gnbli1" data-nm="네이버" data-href="http://www.naver.com"><a href="">1</a></li>
     <li class="gnbli2" data-nm="다음" data-href="http://www.daum.net"><a href="">2</a></li>
     <li class="gnbli3" data-nm="구글" data-href="http://www.google.com"><a href="">3</a></li>
-    <li class="gnbli4" data-nm="NNN" data-href="http://www.naver.com"><a href="">4</a></li>
+    <li class="gnbli4" data-nm="NNN" data-href="http://www.naver.com"><a href="">4</a></li> -->
 </ul>
     
 </body>
